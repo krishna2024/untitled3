@@ -1,0 +1,20 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+driver = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
+driver.maximize_window()
+driver.get("https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwiAs8iS7uP4AhWdxDgGHfDjDaoQPAgI")
+driver.get("https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fwww.google.com%2Fsearch%3Fclient%3Dopera-gx%26q%3Dgmail%26sourceid%3Dopera%26ie%3DUTF-8%26oe%3DUTF-8&hl=en&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp")
+driver.find_element(By.ID,"firstName").send_keys("krishna")
+driver.find_element(By.NAME,"lastName").send_keys("chaithanya")
+driver.find_element(By.ID,"username").send_keys("chaithanyakrishna457")
+driver.find_element(By.NAME,"Passwd").send_keys("krishna@2019")
+driver.find_element(By.NAME,"ConfirmPasswd").send_keys("krishna@2019")
+driver.find_element(By.ID,"accountDetailsNext").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//input[@id='phoneNumberId']").send_keys("8309716097")
+driver.find_element(By.XPATH,"//button[@type='button']").click()
+time.sleep(2)
+driver.find_element(By.XPATH,"//span[@style=""]").click()
+print(driver.title)
+print(driver.current_url)
