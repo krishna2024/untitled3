@@ -17,7 +17,7 @@ if __name__ == '__main__':
             "name": "Tome",
             "score": 91,
             "class": "A-1",
-            "kkkk" :
+
             "rank": 2
         },
     ]
